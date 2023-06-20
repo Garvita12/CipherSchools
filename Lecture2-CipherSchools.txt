@@ -28,7 +28,7 @@ return first(nums,mid+1,end,target);
 else if(nums[mid]>target)
 return first(nums,start,mid-1,target);
 else{
-if(mid==end||(mid+1<=1 && nums[mid]<nums[mid+1])) return mid;
+if(mid==end||(mid+1<=nums.size()-1 && nums[mid]<nums[mid+1])) return mid;
 return last(nums,mid+1,end,target);
 }
 }
