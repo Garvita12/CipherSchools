@@ -1,0 +1,26 @@
+vecor<int> spiral(vector<vector<int>>& mat){
+int m=matrix.size();
+int n=matrix[0].size();
+int r1=0;int re=m-1;
+int c1=0;int ce=n-1;
+vector<int> res;
+while(r1<=re&&c1<=ce){
+for(int i=c1;i<=ce;i++)
+res.push_back(matrix[r1][i];
+r1++;
+for(int i=r1;i<=re;i++)
+res.push_back(matrix[i][ce];
+ce--;
+if(r1<=re){
+for(int i=ce;i>=c1;i--)
+res.push_back(matrix[re][i];
+re--;
+}
+if(c1<=ce){
+for(int i=re;i>=r1;i--)
+res.push_back(matrix[i][c1];
+c1++;
+}
+}
+return res;
+}
