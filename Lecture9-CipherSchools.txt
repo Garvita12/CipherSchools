@@ -1,0 +1,25 @@
+vector<vector<int>> three(vector<int> & nums,int target){
+int n=nums.size();
+sort(nums.begin(),nums.end());
+ vector<vector<int>> output;
+set<vector<int>> a;
+for(int i=0;i<n-2;i++){
+int l=i+1;
+int e=n-1;
+while(l<e){
+if(nums[i]+nums[l]+nums[e]<0)
+l++;
+else if(nums[i]+nums[l]+nums[e]>0)
+e--;
+else{
+a.insert({nums[i],nums[l],nums[e]});
+l++;
+e--;
+}
+}
+}
+for(auto it : a){
+            output.push_back(it);
+        }
+        return output;
+}
