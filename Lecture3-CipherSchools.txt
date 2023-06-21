@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+vector<int> searchRange(vector<int> &nums,int target){
+int mini=-1;int maxi=-1;
+int s=0;int e=nums.size()-1;
+int mid=s+(e-s)/2;
+while(s<e){
+if(nums[mid]>=target){
+e=mid-1;
+if(nums[mid]==target) mini=mid;
+}
+else
+s=mid+1;
+}
+s=0;e=nums.size()-1;
+int mid=s+(e-s)/2;
+while(s<e){
+if(nums[mid]<=target){
+s=mid+1;
+if(nums[mid]==target) maxi=mid;
+}
+else
+e=mid-1;
+}
+}
